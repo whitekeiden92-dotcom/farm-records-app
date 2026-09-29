@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Records — Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <div class="header-left">
+        <h1>🌾 Farm Records</h1>
+        <nav class="main-nav">
+          <a href="/dashboard.html" class="active">Dashboard</a>
+          <a href="/education.html">Education</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <span id="welcomeMessage"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Your Farms</h2>
+        <div id="farmList" class="farm-list"></div>
+      </section>
+
+      <section>
+        <h2>Add a Farm</h2>
+        <form id="addFarmForm" class="inline-form">
+          <input type="text" id="farmName" placeholder="Farm name" required>
+          <input type="text" id="farmLocation" placeholder="Location (optional)">
+          <input type="number" id="farmSize" placeholder="Size in hectares" step="0.1" min="0">
+          <button type="submit">Add Farm</button>
+        </form>
+        <p id="addFarmError" class="error hidden"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

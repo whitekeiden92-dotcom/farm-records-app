@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Records — Education</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <div class="header-left">
+        <h1>🌾 Farm Records</h1>
+        <nav class="main-nav">
+          <a href="/dashboard.html">Dashboard</a>
+          <a href="/education.html" class="active">Education</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <span id="welcomeMessage"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="assistant-section">
+        <div class="assistant-header">
+          <div id="assistantOrb" class="assistant-orb"></div>
+          <div>
+            <h2>Ask the Farm Assistant</h2>
+            <p class="assistant-hint">Ask about pests, crop diseases, livestock care, or general farming advice.</p>
+          </div>
+        </div>
+
+        <div id="chatMessages" class="chat-messages"></div>
+
+        <form id="assistantForm" class="chat-input-form">
+          <textarea id="assistantQuestion" placeholder="e.g. My tomato leaves are turning yellow, what should I do?" rows="2" required></textarea>
+          <button type="submit" id="assistantSubmitBtn">Ask</button>
+        </form>
+        <p id="assistantError" class="error hidden"></p>
+      </section>
+
+      <section>
+        <h2>Farming Education</h2>
+        <select id="categoryFilter" class="category-select"></select>
+        <div id="articleList" class="article-list"></div>
+      </section>
+
+      <section>
+        <h2>Write an Article</h2>
+        <form id="addArticleForm" class="stacked-form">
+          <input type="text" id="articleTitle" placeholder="Title" required>
+          <input type="text" id="articleCategory" placeholder="Category (e.g. Pest Control)">
+          <textarea id="articleBody" placeholder="Write your article..." rows="5" required></textarea>
+          <button type="submit">Publish Article</button>
+        </form>
+        <p id="addArticleError" class="error hidden"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="/js/assistantOrb.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/education.js"></script>
+</body>
+</html>

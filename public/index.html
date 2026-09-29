@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Records — Log In / Sign Up</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div id="plant3d" class="plant-scene"></div>
+    <h1>🌾 Farm Records</h1>
+
+    <div class="tabs">
+      <button id="loginTab" class="tab active">Log In</button>
+      <button id="signupTab" class="tab">Sign Up</button>
+    </div>
+
+    <form id="loginForm" class="auth-form">
+      <label>Email
+        <input type="email" id="loginEmail" required>
+      </label>
+      <label>Password
+        <input type="password" id="loginPassword" required>
+      </label>
+      <button type="submit">Log In</button>
+    </form>
+
+    <form id="signupForm" class="auth-form hidden">
+      <label>Name
+        <input type="text" id="signupName" required>
+      </label>
+      <label>Email
+        <input type="email" id="signupEmail" required>
+      </label>
+      <label>Password
+        <input type="password" id="signupPassword" required minlength="8">
+      </label>
+      <label>Farm size
+        <select id="signupFarmSize">
+          <option value="small">Small</option>
+          <option value="large">Large</option>
+        </select>
+      </label>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p id="errorMessage" class="error hidden"></p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="/js/plant3d.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

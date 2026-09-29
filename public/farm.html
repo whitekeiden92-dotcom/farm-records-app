@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Records — Farm Detail</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>🌾 Farm Records</h1>
+      <div>
+        <span id="welcomeMessage"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <a href="/dashboard.html" class="back-link">&larr; Back to your farms</a>
+
+    <div class="farm-header">
+      <h2 id="farmName">Loading...</h2>
+      <p id="farmMeta"></p>
+    </div>
+
+    <section>
+      <h3>Crops</h3>
+      <div id="cropList" class="record-list"></div>
+      <form id="addCropForm" class="inline-form">
+        <input type="text" id="cropName" placeholder="Crop name" required>
+        <input type="date" id="cropPlantingDate">
+        <button type="submit">Add Crop</button>
+      </form>
+      <p id="addCropError" class="error hidden"></p>
+    </section>
+
+    <section>
+      <h3>Livestock</h3>
+      <div id="livestockList" class="record-list"></div>
+      <form id="addLivestockForm" class="inline-form">
+        <input type="text" id="livestockType" placeholder="Animal type" required>
+        <input type="number" id="livestockCount" placeholder="Count" min="0">
+        <input type="text" id="livestockNotes" placeholder="Health notes (optional)">
+        <button type="submit">Add Livestock</button>
+      </form>
+      <p id="addLivestockError" class="error hidden"></p>
+    </section>
+
+    <section>
+      <h3>Transactions <span id="balanceSummary" class="balance"></span></h3>
+      <div id="transactionList" class="record-list"></div>
+      <form id="addTransactionForm" class="inline-form">
+        <select id="txnType">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <input type="number" id="txnAmount" placeholder="Amount" step="0.01" min="0" required>
+        <input type="text" id="txnDescription" placeholder="Description (optional)">
+        <button type="submit">Add Transaction</button>
+      </form>
+      <p id="addTransactionError" class="error hidden"></p>
+    </section>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/farmDetail.js"></script>
+</body>
+</html>
